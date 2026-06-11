@@ -1,0 +1,141 @@
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║  RefinedRAG — requirements.txt                                       ║
+# ║  Python 3.11 khuyến nghị (tối thiểu 3.10)                           ║
+# ║                                                                      ║
+# ║  Nhóm (A) = bắt buộc để chạy app                                    ║
+# ║  Nhóm (B) = cài thêm khi cần tính năng tương ứng                    ║
+# ╚══════════════════════════════════════════════════════════════════════╝
+
+# ─────────────────────────────────────────────────────
+# (A) BẮT BUỘC — Core app
+# ─────────────────────────────────────────────────────
+streamlit==1.45.1
+python-dotenv==1.0.1
+
+# LangChain core
+langchain-core==0.3.63
+langchain-text-splitters==0.3.8
+langchain-community==0.3.24
+langchain-experimental==0.3.4
+
+# Data / utilities
+numpy==1.26.4
+pandas==2.2.3
+tabulate==0.9.0
+
+# ─────────────────────────────────────────────────────
+# (A) LOADER — Bắt buộc: pypdf + pymupdf + pdfplumber
+# ─────────────────────────────────────────────────────
+pypdf==5.1.0
+pymupdf==1.24.14
+pdfplumber==0.11.4
+
+# ─────────────────────────────────────────────────────
+# (A) CHUNKING
+# ─────────────────────────────────────────────────────
+sentence-transformers==3.3.1
+rank-bm25==0.2.2
+datasketch==1.6.5
+nltk==3.9.1
+
+# ─────────────────────────────────────────────────────
+# (A) EMBEDDING — OpenAI (mặc định)
+# ─────────────────────────────────────────────────────
+openai==1.58.1
+langchain-openai==0.3.10
+langchain-huggingface==0.1.2
+fastembed==0.4.2
+
+# ─────────────────────────────────────────────────────
+# (A) VECTOR DB — Chroma + FAISS (mặc định)
+# ─────────────────────────────────────────────────────
+chromadb==0.6.3
+langchain-chroma==0.2.2
+faiss-cpu==1.9.0.post1
+
+# ─────────────────────────────────────────────────────
+# (B) TÙY CHỌN — Loader nâng cao
+# ─────────────────────────────────────────────────────
+
+# Marker PDF — PDF → Markdown chất lượng cao, hỗ trợ bảng, công thức LaTeX
+# Khuyến nghị cho PDF phức tạp (học thuật, kỹ thuật)
+# pip install marker-pdf==1.6.2
+# marker-pdf==1.6.2
+
+# Docling — IBM Research parser, Markdown output xuất sắc
+# pip install docling==2.28.0
+# docling==2.28.0
+
+# Unstructured — OCR + bảng + hình ảnh, tốt nhất cho PDF scan
+# pip install 'unstructured[pdf]==0.16.12'
+# unstructured[pdf]==0.16.12
+
+# ─────────────────────────────────────────────────────
+# (B) TÙY CHỌN — Embedding providers khác
+# ─────────────────────────────────────────────────────
+
+# Cohere — embed-multilingual-v3.0, tốt cho tiếng Việt
+# pip install cohere==5.13.12 langchain-cohere==0.4.3
+# cohere==5.13.12
+# langchain-cohere==0.4.3
+
+# Google Gemini
+# pip install google-generativeai==0.8.3 langchain-google-genai==2.0.11
+# google-generativeai==0.8.3
+# langchain-google-genai==2.0.11
+
+# Ollama — local embedding
+# pip install ollama==0.4.7 langchain-ollama==0.2.3
+# ollama==0.4.7
+# langchain-ollama==0.2.3
+
+# ─────────────────────────────────────────────────────
+# (B) TÙY CHỌN — Vector DB khác
+# ─────────────────────────────────────────────────────
+
+# Qdrant — production, filtering phức tạp (ACORN)
+# pip install qdrant-client==1.13.3 langchain-qdrant==0.2.0
+# qdrant-client==1.13.3
+# langchain-qdrant==0.2.0
+
+# LanceDB — embedded, columnar, không cần server
+# pip install lancedb==0.17.0
+# lancedb==0.17.0
+
+# Weaviate — hybrid search out-of-the-box
+# pip install weaviate-client==4.10.4 langchain-weaviate==0.0.3
+# weaviate-client==4.10.4
+# langchain-weaviate==0.0.3
+
+# PGVector — PostgreSQL extension
+# pip install psycopg==3.2.4 langchain-postgres==0.0.13
+# psycopg[binary]==3.2.4
+# langchain-postgres==0.0.13
+
+# Pinecone — managed cloud
+# pip install pinecone==5.0.1 langchain-pinecone==0.2.0
+# pinecone==5.0.1
+# langchain-pinecone==0.2.0
+
+# ─────────────────────────────────────────────────────
+# (B) TÙY CHỌN — Generation (LLM) providers khác
+# ─────────────────────────────────────────────────────
+
+# Anthropic Claude
+# pip install anthropic==0.43.0
+# anthropic==0.43.0
+
+# Google Gemini — đã khai báo ở phần embedding nếu cần
+
+# Ollama — đã khai báo ở phần embedding nếu cần
+
+# Cohere Command-R — đã khai báo ở phần embedding nếu cần
+
+# ─────────────────────────────────────────────────────
+# (B) TÙY CHỌN — Sparse / Hybrid retrieval nâng cao
+# ─────────────────────────────────────────────────────
+
+# SPLADE sparse neural embedding (tốt hơn BM25, cần ~500 MB model, GPU khuyến nghị)
+# pip install transformers==4.47.1 torch==2.5.1
+# transformers==4.47.1
+# torch==2.5.1

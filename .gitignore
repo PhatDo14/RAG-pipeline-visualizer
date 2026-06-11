@@ -1,0 +1,60 @@
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+__pypackages__/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
+*.key
+
+# Streamlit/cache/runtime artifacts
+.streamlit/
+!.streamlit/config.toml
+processed_data/
+storage/
+outputs/
+runs/
+checkpoints/
+wandb/
+mlruns/
+.marker_cache/
+.docling_cache/
+
+# Test/type/lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build/package artifacts
+build/
+dist/
+*.egg-info/
+wheels/
+
+# Local databases/logs
+*.log
+*.sqlite3
+*.sqlite
+*.db
+
+# IDE/editor/OS files
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
